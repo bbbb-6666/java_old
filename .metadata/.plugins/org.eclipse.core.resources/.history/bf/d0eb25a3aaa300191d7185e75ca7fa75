@@ -1,0 +1,69 @@
+/*
+ * 상수 : 프로그램에서 변하지 않는 수, 항상 변하지 않는 값
+ * 자바에서는 상수를 선언하는 데 있어서 final이라는 키워드를 사용해서 선언한다.  
+ */
+
+/*
+package chapter2;
+
+public class A05_constant {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		final int MAX_NUM = 1000;
+		final double PI = 3.141592 ;
+		System.out.println(MAX_NUM);
+		System.out.println(PI);
+		
+		//MAX_NUM=2000; // 이거치면 오류 뜨는 내용 : 파이널로 해서 선언되는 숫자값은 상수이기 대문에 값을 변경하면 안된다.
+		                // 굳이 하고 싶으면 final 이라는 키워드를 걷어내면 됨.
+		
+		System.out.println(1+MAX_NUM); //보통 대문자로 선언을 함.
+		*/
+		// 상수 이해 안됨. 
+		// 반복적으로 사용하고 변환하지 않는 값들을 상수로 선언하는 것이 좋다.
+		
+		
+		
+/*
+ * 리터럴 : 프로그램에서 사용하는 모든 숫자, 문자, 논리값을 일컫는 말 
+ * 보통은 대입 연산자의 오른쪽에 쓰여지는 값을 이야기 함.
+ * 'A' 10, 3.141592 ..... >> 이런식으로 표현이 됨.
+ * 
+ * 
+ */
+		
+		
+
+
+// 키보드로부터 입력 받기
+package chapter2;
+
+import java.util.Scanner;
+
+public class A05_constant {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		final int MAX_NUM = 1000;
+		final double PI = 3.141592 ;
+		System.out.println(MAX_NUM);
+		System.out.println(PI);
+		
+		System.out.println(1+MAX_NUM); 
+		
+		Scanner sc = new Scanner (System.in);
+		//스캐너 오류 : scanner라고 클래스는 자바 유틸안에 있는 건데, 기본적으로 임포트가 되지 않아서 오류가 뜸.
+		//scanner 에 마우스 대서 import 웅앵 누름 그러면 위에 import java.util.Scanner; 뜸
+		// new Scanner : 새로운 스캐너를 만들겠다
+		// System.in : 키보드를 통한 입력
+		// 키보드를 통한 입력을 받기 위해서 스캐너 객체 sc를 생성한다는 뜻
+		
+		System.out.println("반지름을 입력해주세요 : ");
+		
+		
+		
+		
+	}
+
+}

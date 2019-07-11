@@ -1,0 +1,16 @@
+//연습문제
+
+package chapter2;
+
+public class Ex01_computeage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	 	
+		// 1. 이름과 생년을 입력받아 ___님, 나이는 ___세 입니다.
+		   String name = 
+		
+		// 2. 가로, 세로의 길이를 입력 받아 사각형의 넓이를 계산하는 프로그램을 작성하시오. 
+	}
+
+}

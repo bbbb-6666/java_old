@@ -1,0 +1,16 @@
+package chapter2;
+
+public class Ex02_RecArea {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+String name = "Min miri";
+System.out.println(name);
+ System.out.println("님, 나이는 ");
+ name=sc.next();
+ System.out.println(name);

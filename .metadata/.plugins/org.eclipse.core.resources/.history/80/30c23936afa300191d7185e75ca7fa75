@@ -1,0 +1,23 @@
+//연습문제
+
+package chapter2;
+
+import java.util.Scanner;
+
+public class Ex01_computeage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	 	
+		// 1. 이름과 생년을 입력받아 ___님, 나이는 ___세 입니다.
+		   Scanner sc = new Scanner (System.in);
+		   String name = "Min miri";
+		   System.out.println(name);
+		   System.out.println("님, 나이는 ");
+		   name=sc.next();
+		   System.out.println(name);
+	 	   
+		// 2. 가로, 세로의 길이를 입력 받아 사각형의 넓이를 계산하는 프로그램을 작성하시오. 
+	}
+
+}
