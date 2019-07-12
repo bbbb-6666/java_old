@@ -1,0 +1,17 @@
+//관계연산자
+
+package chapter3;
+
+public class A03_RelationalOprator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 생년을 입력받아 성년(19세 이상) 여부를 판단하라.
+		
+		
+		
+		
+		System.out.println(10>5);
+	}
+
+}

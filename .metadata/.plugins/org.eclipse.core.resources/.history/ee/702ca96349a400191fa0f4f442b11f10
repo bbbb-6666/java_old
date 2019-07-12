@@ -1,0 +1,38 @@
+package chapter2;
+
+import java.util.Scanner;
+
+public class bbb {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// 이름, 국어, 수학, 영어 점수를 입력받아 총점과 평균을 출력하는 프로그램 작성
+ 
+		String name;
+		int korean, math, english, sum;
+		double avg;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("이름을 입력하시오.");
+		name = sc.next();
+		
+		System.out.println("국어 점수를 입력하시오.");
+		korean = sc.nextInt();
+
+		System.out.println("수학 점수를 입력하시오.");
+		math = sc.nextInt();
+		
+		System.out.println("영어 점수를 입력하시오.");
+		english = sc.nextInt();
+		
+		sum = korean+math+english;
+		avg = sum/3;
+		
+		System.out.println(name+"의 총점: "+sum+", "+"평균은 "+avg+"입니다.");
+		
+		
+	}
+
+}

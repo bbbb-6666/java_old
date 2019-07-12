@@ -1,0 +1,34 @@
+//증감연산자
+package chapter3;
+
+public class A02_incrementOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int A= 10;
+		int B= A++;
+		System.out.println(B);
+		//A=10, b=11
+		/*왜 10이 나오는 가   p.75  (이해안됨. 책 다시 보기
+ 		 * 연산의 우선순위가 있는데, 
+		 * int A= 10;
+		   int B= A++; 일 때 a의 값이 b에 먼저 대입되고 
+		   그 다음 ++가 계산이 되기 때문에 답이 a는 11이 나온다.
+		   그래서 11이 나오게 하려면
+		   a=10;
+		   b=++a; 라고 해야됨
+		   
+		   위치에 따른 의미차이를 분명히 알아야하낟.
+		   int val = 10일 때
+		   int num = ++value 문장과
+		   int num = value++ 문장은 다른 결과를 가진다.
+		 */
+		
+		int c= 10;
+		int d= ++c;
+		System.out.println(d);
+		
+	}
+
+}

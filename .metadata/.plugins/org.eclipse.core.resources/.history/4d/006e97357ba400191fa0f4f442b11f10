@@ -1,0 +1,36 @@
+package chapter04;
+
+import java.util.Scanner;
+
+public class A01_IfStatement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*        나이           입장료
+		 *    10살 이하          1,000원 
+		   11~20살 이하          2,000원
+		      21살 이상          3,000원
+        */		
+		Scanner sc = new Scanner(System.in);
+		
+		int age;
+		
+		System.out.println("입장료를 입력해주세요");
+
+		age= sc.nextInt();
+		
+		System.out.println("입장료는");
+		if(age <= 10) {
+			       System.out.println(1000+"원");
+		}else if (age<=20) {
+			       System.out.println(2000+"원");
+		}else {System.out.println(3000+"원");
+		
+		System.out.println("입니다.");
+		
+		
+		}
+	}
+
+}

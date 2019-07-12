@@ -1,0 +1,28 @@
+package chapter3;
+
+public class A02_incrementOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int A= 10;
+		int B= A++;
+		System.out.println(B);
+		
+		/*왜 10이 나오는 가
+		 * 연산의 우선순위가 있는데, 
+		 * int A= 10;
+		   int B= A++; 일 때 a의 값이 b에 먼저 대입되고 
+		   그 다음 ++가 계산이 되기 때문에 답이 10이 나온다.
+		   그래서 11이 나오게 하려면
+		   a=10;
+		   b=++a; 라고 해야됨
+		 */
+		
+		int c= 10;
+		int d= ++c;
+		System.out.println(d);
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+/*비트 연산자
+ *리터럴 = 들어가는 숫자 자체 . 일반적인 숫자값.
+ *어떤 변수를 선언을 해놓고 오른쪽 항에 들어가는 숫자를 내가 임의로 컨트롤 할 수 있음.
+ *
+ *비트로 숫자값을 지정해서 변수에 넣어줄 수 있다.
+ *
+ *
+ */
+
+package chapter3;
+
+public class A08_BitOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int number =5;
+		System.out.println(number);
+
+	}
+
+}
+
+

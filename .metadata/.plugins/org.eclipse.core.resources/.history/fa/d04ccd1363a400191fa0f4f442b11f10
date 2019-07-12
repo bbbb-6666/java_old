@@ -1,0 +1,21 @@
+/*
+ * 조건연산자
+ * 
+ */
+
+package chapter3;
+
+public class A07_ConditionalOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int result;
+		result = (10>5)?100:999;
+		System.out.println(result);
+		
+		
+		
+	}
+
+}

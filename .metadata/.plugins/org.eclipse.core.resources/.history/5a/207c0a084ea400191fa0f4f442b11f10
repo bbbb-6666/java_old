@@ -1,0 +1,13 @@
+package chapter3;
+
+public class A02_incrementOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int A= 10;
+		int B= A++;
+		System.out.println(b);
+	}
+
+}
