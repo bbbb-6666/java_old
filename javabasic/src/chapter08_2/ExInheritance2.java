@@ -3,7 +3,7 @@
 //부모클래스로부터 하위클래스가 일정정도의 필드는 상속을 받아서쓰더라고
 //내 나름의 필드를 추가할 수 있고, 메소드도 상속 받아서 쓰더라도 내 나름의 메소드를 만들어서 사용할 수 있다.
 
-package chaptet08_2;
+package chapter08_2;
 
 public class ExInheritance2 {
 

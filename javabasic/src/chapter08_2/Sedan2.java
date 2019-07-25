@@ -1,4 +1,4 @@
-package chaptet08_2;
+package chapter08_2;
 
 public class Sedan2 extends Car2 {
 	int passengerCount;
