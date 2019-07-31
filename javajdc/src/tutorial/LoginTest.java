@@ -26,6 +26,7 @@ public class LoginTest extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtuserid;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -68,6 +69,7 @@ public class LoginTest extends JFrame {
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
+			@SuppressWarnings("null")
 			public void actionPerformed(ActionEvent e) {
 				
 				//DB connection 
@@ -85,6 +87,7 @@ public class LoginTest extends JFrame {
 					sql = "SELECT * members WHERE userid = ? AND userpwd = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, txtuserid.getText());
+					JLabel txtuserpwd = null;
 					pstmt.setString(2, txtuserpwd.getText());
 					
 					result = pstmt.executeQuery();
