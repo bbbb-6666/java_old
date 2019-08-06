@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -19,22 +20,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.SwingConstants;
 
 public class LoginTest extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtuserid;
+	private JTextField txtuserpwd;
+	static LoginTest frame = new LoginTest();
 
 
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginTest frame = new LoginTest();
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,6 +53,7 @@ public class LoginTest extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginTest() {
+		setTitle("Member Information Form");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -67,6 +74,22 @@ public class LoginTest extends JFrame {
 		contentPane.add(txtuserid);
 		txtuserid.setColumns(10);
 		
+		JTextField txtuserpwd = new JTextField();
+		txtuserpwd.setColumns(10);
+		txtuserpwd.setBounds(159, 115, 116, 21);
+		contentPane.add(txtuserpwd);
+
+		JButton btnJoin = new JButton("Join");
+		btnJoin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Join join = new Join(); //새로운 MemberInfo 제이프레임을 생성한 후 적어줘야함.
+				join.setVisible(true);
+			}
+		});
+		btnJoin.setBounds(56, 203, 97, 23);
+		contentPane.add(btnJoin);
+		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			@SuppressWarnings("null")
@@ -84,22 +107,29 @@ public class LoginTest extends JFrame {
 				try {
 					Class.forName("oracle.jdbc.driver.OracleDriver");
 					conn = DriverManager.getConnection(url, user, pwd);
-					sql = "SELECT * members WHERE userid = ? AND userpwd = ?";
+					sql = "SELECT * from members WHERE userid = ? AND userpwd = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, txtuserid.getText());
-					JLabel txtuserpwd = null;
 					pstmt.setString(2, txtuserpwd.getText());
 					
 					result = pstmt.executeQuery();
 					
 					if(result.next()) {
-						JOptionPane.showMessageDialog(null, "로그인이 성공하였습니다.");
+						//JOptionPane.showMessageDialog(null, "로그인이 성공하였습니다.");
+						// 현재 화면을 닫고..
+						dispose();
+						 //dispose : 창을 닫아주는 메소드
+						// 새로운 화면을 생성한 후 
+							MemberInfo membInfo = new MemberInfo(); //새로운 MemberInfo 제이프레임을 생성한 후 적어줘야함.
+						// 새로운 화면을 보이게 한다.
+							membInfo.setVisible(true);
 					} else { 
 						JOptionPane.showMessageDialog(null, "로그인이 실패하였습니다.");
 					}
 					
 				} catch (ClassNotFoundException | SQLException e1) {
 					// TODO Auto-generated catch block
+					
 					e1.printStackTrace();
 				}
 				
@@ -113,10 +143,6 @@ public class LoginTest extends JFrame {
 			}
 		});
 		
-		JTextField txtuserpwd = new JTextField();
-		txtuserpwd.setColumns(10);
-		txtuserpwd.setBounds(159, 115, 116, 21);
-		contentPane.add(txtuserpwd);
 		btnLogin.setBounds(56, 166, 97, 23);
 		contentPane.add(btnLogin);
 		
@@ -134,6 +160,15 @@ public class LoginTest extends JFrame {
 		lblLoginTest.setFont(new Font("함초롬돋움", Font.BOLD, 14));
 		lblLoginTest.setBounds(87, 34, 151, 32);
 		contentPane.add(lblLoginTest);
+		
+		JLabel label = new JLabel("");
+		/*이미지 가져오기*/
+		Image img = new ImageIcon(this.getClass().getResource("/login.png")).getImage(); /*빨간 줄 뜨면 임포트 시킬것.*/
+		/*레이블에다가 이미지 추가*/ 
+		label.setIcon(new ImageIcon(img));
+		label.setBounds(316, 60, 90, 129);
+		contentPane.add(label);
+		
+		
 	}
-
 }
