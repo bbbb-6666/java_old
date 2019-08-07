@@ -15,4 +15,6 @@
 <fullyQualifiedTypeName name="javax.naming.spi.DirStateFactory.Result"/>
 <fullyQualifiedTypeName name="javax.xml.transform.Result"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="net.proteanit.sql.DbUtils"/>
+<fullyQualifiedTypeName name="javax.swing.DefaultComboBoxModel"/>
 </qualifiedTypeNameHistroy>
