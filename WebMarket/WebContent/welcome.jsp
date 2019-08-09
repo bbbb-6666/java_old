@@ -28,6 +28,7 @@
 			<h3><%=tailine %></h3>
 			<!-- 접속 시간 출력을 위한 내용 추가 -->
 				<%
+				response.setIntHeader("refresh", 5);
 				Date day = new java.util.Date(); 
 					String am_pm;
 					int hour = day.getHours();
@@ -41,6 +42,8 @@
 						}
 					String CT = hour + ":" + minute + ":" + second + " " + am_pm;
 					out.println("현재 접속 시각 : "+CT+"\n");
+					
+					
 				%>
 		</div>
 	</div>

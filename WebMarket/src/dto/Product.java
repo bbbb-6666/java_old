@@ -14,7 +14,10 @@ public class Product implements Serializable {
 	private String category;
 	private long unitsInstock;
 	private String condition;
-
+	
+	public Product() {
+		super();
+	}
 	public Product(String productId, String pname, Integer unitPrice) {
 		this.productId = productId;
 		this.pname = pname;
