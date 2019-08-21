@@ -8,8 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<link rel = "stylesheet"
-		href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"/>
 <title>상품 상세 정보</title>
 </head>
 <body>
@@ -26,6 +25,9 @@
 	%>
 	<div class = "container">
 		<div class = "row">
+			<div class = "col-md-5">
+				<img src = "./resources/images/<%=product.getFilename()%>" style="width:100%" />
+			</div>
 			<div class="col-md-6">
 				<h3><%=product.getPname()%></h3>
 				<p><%=product.getDescription() %>
