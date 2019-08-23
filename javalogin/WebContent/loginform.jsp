@@ -8,7 +8,7 @@
 <title>회원가입 창</title>
 </head>
 <body>
-<form name=fom>
+<form name=loginform action="./registerForm.jsp" method="post">
 		<fieldset>
 			<legend>회원가입</legend>
 			<table>
@@ -41,7 +41,7 @@
 					<td>주소</td>
 					<td> <input type=text name="do" id="do">도 
 						 <input type="text" name="city" id="city">시  <br>
-					상세주소 : <input type="text" name="detailaddr" id="detailaddr"></td>
+					상세주소 : <input type="text" name="dtaddr" id="dtaddr"></td>
 				</tr>
 				<tr>
 					<td>회원가입일</td>
@@ -68,7 +68,6 @@
 					<td>최종방문일</td>
 					<td><input type="text" id="lastvdate" name="lastvdate"></td>
 				</tr>
-				
 				<tr>
 					<td colspan="2"><input type="button" id="signup"
 						value="Join us" onclick="CheckLogin()"> 
