@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /* 아이디와 패스워드를 건네받아 체크해주는 함수를 작성해보자.
+        아이디와 패스워드가 전역변수의 id, pw가 둘 다 맞으면 true를 아니면, false를 리턴하라.
+        사용자의 아이디와 패스워드는 promp로 각각 입력받아라.
+    */
+    var admin_id = "root"
+    var admin_pwd = 1234
+    var id = prompt("아이디를 입력", "");
+    var pwd = prompt("비밀번호를 입력", "0");
+
+    //로그인이 성공했는지 아닌지를 체크
+    function login(id, pwd) {
+        if(id==admin_id && pwd == admin_pwd)
+            return true;
+        else 
+            return false;
+    } 
+
+    var result = login(id, pwd); 
+    if(result) 
+        document.write(id+"님 환영합니다.")
+    else
+        alert("존재하지않는 아이디입니다.");
+
+</script>
+</body>
+</html>

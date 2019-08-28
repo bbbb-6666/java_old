@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lotto_num = new Array();
+        var max_length = 6;
+        for(var i=0; i<max_length; i++){
+            var num = Math.round((Math.random() * 45 + 1), 0);
+            for(var j=0; j<i; j++) {
+                    if (lotto_num[j]==lotto_num[i]){
+                        i--;
+                        break;
+                    }
+            }
+            //lotto_num[i] = Math.round((Math.random() * 45 + 1), 0);
+            //콤마 뒤에는 소수점 몇자리까지 나타내고싶은지. 0이면 소수점 없음.
+        }
+        for(var i in lotto_num) 
+            document.write(lotto_num[i] + "<br>");
+            //lotto_num.length //그 배열이 가지고 있는 크기를 가지고 와줌.
+    </script>      
+</body>
+</html>

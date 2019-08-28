@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var count = 0;
+
+
+ 
+        //1. 일반 호출 방식
+
+        myFnc1();
+        function myFnc1(){
+            count++;
+            document.write("hello"+count, "<br>");
+        } //fuction이라고 불리는 건 어느위치에서 호출해도 상관이 없음.
+        myFnc1();
+
+
+        //2. 익명호출 방식
+        var myFnc2 = function(){
+            count++;
+            document.write("hello"+count, "<br>");
+        }
+        myFnc2();
+        //값이 출력이 아예 안됨.
+
+
+    </script>
+</body>
+</html>

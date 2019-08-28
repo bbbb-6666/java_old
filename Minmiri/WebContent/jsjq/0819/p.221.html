@@ -1,0 +1,45 @@
+<!--p.191-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function() {
+            var result_3 = $("#sec_1 img").attr("src");
+            //sec_1의 src 속성을 가져옴
+            console.log(result_3);
+
+            $("#sec_1 img")
+            .attr({ //고칠게 많으면 중괄호를 열어서 고쳐줌
+                "width":200,
+                "src":result_3.replace("1.jpg", "2.jpg"),
+                "alt" : "바위"
+            })
+            //Json 문법 쓰기 ::
+            // {키 : 값, 키 : 값}
+            //중괄호 열고 키 : 값, 이런식으로 써준다.
+            .removeAttr("border"); //기능 삭제해라
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <section id = "sec_1">
+        <h2>
+            이미지 속성
+        </h2>
+        <p>
+            <img src = "images/math_img_1.jpg" alt="가위" border="2" >
+        </p>
+    </section>
+</body>
+</html>

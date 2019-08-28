@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p.274</title>
+    <style>
+        body{font: 14px Malgun Gothic, "맑은고딕", sans-serif;}
+        .zoomBtnZone{
+            font-size: 14px;
+        }
+    </style>
+    <script src = "js/jquery.js"></script>
+    <script>
+    $(function(){
+            //기본 폰트 사이즈는 14부터 시작
+        var baseFontSize = 14;
+
+            //이벤트 핸들러 등록 
+            //클릭하면 zoonInOut 이라는 함수를 제공을 하겠다.
+        $(".zoomBtnZone button").on("click", zoomInOut);
+        
+            //폰트 사이즈를 zoom in out 시키는 함수 
+        function zoomInOut() {
+            if($(this).hasClass("zoomOutBtn")){
+                if(baseFontSize<=8) return false;
+                baseFontSize--;
+            } else if($(this).hasClass("zoomInBtn")){
+                if(baseFontSize>=20) return false;
+                baseFontSize++;
+            } else {
+                baseFontSize = 14;
+            }
+
+                //14px 라고 써진 부분에 숫자값 변경 
+            $(".fontSize").text(baseFontSize+"px");
+
+                //실제 css를 활용해서 글자 사이즈 변경
+            $("body").css({fontSize:baseFontSize+"px"});
+        }
+    });
+    </script>
+</head>
+<body>
+    <p class="zoomBtnZone">
+        <button class = "zoomOutBtn">-</button>
+        <button class = "originBtn">100%</button>
+        <button class = "zoomInBtn">+</button>
+    </p>
+    <p class="fontSize">14px</p>
+    <div id = "wrap">
+        지방의회의 조직·권한·의원선거와 지방자치단체의 장의 선임방법 기타 지방자치단체의 조직과 운영에 관한 사항은 법률로 정한다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다.
+    </div>
+</body>
+</html>

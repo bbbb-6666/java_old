@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var today = new Date();
+        var nowMonth = today.getMonth();
+        var nowDate = today.getDate();
+        var nowDay = today.getDay();
+
+        document.write("<h1> 오늘의 날짜 정보 </h1>" );
+        document.write(nowMonth+1 + "월 "+nowDate+"일 "+nowDay+"요일"+"<br>");
+        document.write("현재 요일 : " + today.toLocaleString(), "<br>");
+/*
+        var now_setMonth = new Date(2002, 4, 31); 
+        document.write(now_setMonth.getMonth(), "월 ",now_setMonth.getDate() +"일 "+now_setMonth.getDay()+"요일"+"<br>");
+*/
+        //괄호 안에 2002,4,31일을 넣으면 년원일을 가지고 올 수 있음. 아예 저 값으로 초기화 시켜도 됨. 
+        //교수님이 너무 빨리 나가서 못 따라감.
+    </script>
+</body>
+</html>

@@ -1,133 +1,269 @@
-﻿
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>민미리 홈페이지</title>
-        <script src="prefixfree.min.js"></script>
-        <style>
-        </style>
-    </head>
-        <body>
-        <img src = "img/menu.png" alt="메뉴판" usemap="#favorites"> 
-        <map name="favorites">
-            <area shape = "rect" coords = "285,67,429,123" href="home.html" alt="홈"> 
-            <area shape = "rect" coords = "533,67,736,123" href="profile.html" alt="프로필">
-            <area shape = "rect" coords = "850,67,1082,123" href="example.html" alt="예시">
-            <area shape = "rect" coords = "1184,67,1342,123" href="form.html" alt="폼">
-        </map>
-<br><hr>
-        <fieldset> 
-        <legend id="list"><h1> HTML 공부 </h1></legend>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXAMPLE</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+    body {
+        margin : 0px;
+        padding : 0px;
+        background-image: url("img/ex_bg.jpg");
+    }
+    #wrapper {
+        width: 96%;
+        margin: 0 auto;
+    }
+    header img {max-width: 100%;}
+    #menu {
+        border : 2px solid chartreuse;
+        background-color: black;  
+        margin-top : 10px;
+        margin-bottom : 10px;
+        }
+    #menu ul {
+        margin-top: 15px;
+        }
+    #menu ul li {
+        display: inline;
+        font-family: 'Source Sans Pro', sans-serif;   
+        font-size: 1.5rem; 
+    }
+    section {
+        border: 2px solid gainsboro;
+        overflow: auto;
+    }
+    #category{
+        border: 2px solid chartreuse;
+        background-color: white;
+        float: left;
+        width: 21%; 
+    }
+    #html{
+        padding: 10px;
+        border : 1px dotted black;
+        float : left;
+        width: 40%;
+        margin-top : 5px;
+        margin-left : 5px;
+        font-size: 1rem;
+    }
+    #js{
+        margin : 1px;
+        padding: 10px;
+        border : 1px dotted black;
+        float : right;
+        width: 40%;
+        margin-top : 5px;
+        margin-right : 5px;
+        font-size: 1rem;
+    }
+    #content {
+        padding : 20px;
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 1rem;
+        line-height:1.5em;
+        background-color: white;
+        border: 2px solid chartreuse;
+        float: right;
+        width: 75%;
+    }
+    #alljsjq{
+        display: inline;
+    }
+    #d190812{
+        border : 1px dotted black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 800px){
+        #wrapper {
+            width : 100%;
+            display: block;
+        }
+        #section{
+            width : 100%;
+            display: block;
+        }
+        #category {
+            width : 100%;
+            display: block;
+        }
+        #html {
+            width : 100%;
+        }
+        #js {
+            width : 90%;
+        }
+        #content {
+            width : 90%;
+        }
+    }
+</style>
+<style type="text/css">
+a:link {text-decoration: none;}
+</style>
+<body>
+    <div id="wrapper">
+        <header>
+            <img src = "img/ex_header.png" alt = "ex_header">
+        </header>
+        <div id = "menu">
             <ul>
-                  <li><a href="#day1"> DAY1 : 표, 목록 </a></li>
-                  <li><a href="#day2"> DAY2 : 이미지맵, 앵커기능</a></li>
-                  <li><a href="#day3"> DAY3 </a></li>
-                  <li><a href="#day4"> DAY4 </a></li>
-                  <li><a href="#day5"> DAY5 </a></li>
-                  <li><a href="#day6"> DAY6 </a></li>
-                  <li><a href="#day7"> DAY7 </a></li>
-                  <li><a href="#day8"> DAY8 </a></li>
-                  <li><a href="#day9"> DAY9 </a></li>
-                  <li><a href="#day10"> DAY10 </a></li>
-                  <li><a href="#day11"> DAY11 </a></li>
-                  <li><a href="#day12"> DAY12 </a></li>
-                  <li><a href="#day13"> DAY13 </a></li>
-                   </ul>
-        </fieldset> 
-            <hr>
-<br><br><br><br><br><br><br>
-        <fieldset> 
-        <h2 id="day1"> DAY1 : 표, 목록 만들기 </h2>
-  <b>○ 표를 만드는 방법 </b><br>
-&nbsp;&nbsp;- 표는 <,> 기호와 td, tr, th를 이용해 만든다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; 맨 윗줄에는 괄호 안에 table 넣어주고 끝날때는 /table라고 명시해준다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp; tr로 행을 만들고 td로 셀을 표현한다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp; colspand은 가로 칸 즉, 열을 합치는 기능이고 rowspan은 세로 칸, 즉 행을 합치는 기능이다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp; 표의 제목 같은 기능을 하는 부분은 th로 표현해주면 된다.<br>
+                <li><a href="home.html" style="color: chartreuse">HOME / &nbsp;&nbsp;</a></li>
+                <li><a href="profile.html" style="color: chartreuse">PROFILE / &nbsp;&nbsp;</a></li>
+                <li><a href="example.html" style="color: chartreuse">EXAMPLE / &nbsp;&nbsp;</a></li>
+                <li><a href="form.html" style="color: chartreuse">FORM/</a></li>
+            </ul>
+        </div>
+<section>
+    <div id = "category">
+        <div id = "html">
+            <h2>html&css</h2>
+            <ul id="first">
+                <li><a href="#190715"> 190715  </a></li>
+                <li><a href="#190716"> 190716</a></li>
+                <li><a href="#190722"> 190722 </a></li>
+                <li><a href="#190723"> 190723 </a></li>
+                <li><a href="#190805"> 190805 </a></li>
+            </ul>
+        </div>
+        <div id = "js">
+            <h2>javascript<br>&nbsp;& Jquery</h2>
+            <ul id = "jsjq">
+                <li><a href="#190812"> 190812 </a></li>
+                <li><a href="#190813"> 190813 </a></li>
+                <li><a href="#190814"> 190814 </a></li>
+                <li><a href="#190819"> 190819 </a></li>
+                <li><a href="#190820"> 190820 </a></li>
+            </ul>
+        </div>
+    </div>
+    <div id = "content">
+            <h2 id="190715"> DAY1 : 표, 목록 만들기 </h2>
+            <b>○ 표를 만드는 방법 </b><br>
+                &nbsp;&nbsp;- 표는 <,> 기호와 td, tr, th를 이용해 만든다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 맨 윗줄에는 괄호 안에 table 넣어주고 끝날때는 /table라고 명시해준다.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; tr로 행을 만들고 td로 셀을 표현한다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; colspand은 가로 칸 즉, 열을 합치는 기능이고 rowspan은 세로 칸, 즉 행을 합치는 기능이다.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 표의 제목 같은 기능을 하는 부분은 th로 표현해주면 된다.<br>
+                &nbsp;  → 예시
+                <br><br>
+                    <table border=1>
+                        <colgroup>
+                            <col style ="width:100px;">
+                            <col style ="width:100px;">
+                            <col style ="width:100px;">
+                            <col style ="width:100px;">
+                        </colgroup>
+                        <tr>
+                            <th> 이름 </th>
+                            <td> </td>
+                            <th> 연락처 </th>
+                            <td > </td>
+                        </tr>
+                        <tr>
+                            <th> 주소</th>
+                            <td colspan="3" > </td>
+                        </tr>
+                    </table>
+          <br>
+            <b>○ 목록 만드는 법 </b><br>
+                &nbsp;&nbsp; - 목록을 만드는 법에는 세가지 방법이 있다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1. <u>ul, li태그</u>는 순서 없는 목록을 만드는데 사용된다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
+            <ul> 
+                <li> 일반전화 : (국번전화) 1330 </li>
+                <li> 휴대전화 : 064-1330</li>
+                </ul>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 순서가 있는 목록은 <u>ol, li태그</u>를 통해 만드는데, ol 태그의 괄호 안에 type="속성값" start="시작순서"를 적어주면 좀 더 용이하게 순서를 정리할 수 있다.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
+                <ul> 
+                <li> 1일차 </li>
+                    <ol type="a">
+                        <li> 해녀박물관 </li>
+                        <li> 낚시체험 </li>
+                    </ol>
+                </li>
+                <li>
+                <ol type="a" start="3">
+                    <li> 용눈이오름 </li>
+                    <li> 만장굴 </li>
+                    <li> 카약체험 </li>
+                </ol>
+                </li>
+            </ul>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.<u> dl, dt, dd </u>태그는 설명 목록을 만들 때 사용한다.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  dl은 목록을 만들고, dt는 제목을, dd는 설명을 표시한다.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
+            <dl>
+                <dt>올레 1코스</dt>
+                <dd> 코스 : 시흥 초등학교 옆 - 광치기 해변 </dd>
+                <dd> 거리: 14.6km(4~5시간) </dd>
+                <dd> 난이도:중 </dd>
+                <dt>올레 2코스</dt>
+                <dd> 코스 : 광치기 해변 - 온평 포구 </dd>
+                <dd> 거리 : 14.5km(4~5시간) </dd>
+                <dd> 난이도 : 중 </dd>
+            </dl>       
+            <a href="#category"> 목록으로 돌아가기</a>
+          
+          <br><br><br><br><br>
 
-&nbsp;  → 예시
-<br><br>
-            <table border=1>
-            <colgroup>
-               <col style ="width:100px;">
-               <col style ="width:100px;">
-               <col style ="width:100px;">
-              <col style ="width:100px;">
-            </colgroup>
-                  <tr>
-                       <th> 이름 </th>
-                       <td> </td>
-                       <th> 연락처 </th>
-                       <td > </td>
-                  </tr>
-                  <tr>
-                       <th> 주소</th>
-                       <td colspan="3" > </td>
-                  </tr>
-            </table>
-<br>
-  <b>○ 목록 만드는 법 </b><br>
-&nbsp;&nbsp; - 목록을 만드는 법에는 세가지 방법이 있다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1. <u>ul, li태그</u>는 순서 없는 목록을 만드는데 사용된다. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
-<ul> 
-<li> 일반전화 : (국번전화) 1330 </li>
-<li> 휴대전화 : 064-1330</li>
-</ul>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 순서가 있는 목록은 <u>ol, li태그</u>를 통해 만드는데, ol 태그의 괄호 안에 type="속성값" start="시작순서"를 적어주면 좀 더 용이하게 순서를 정리할 수 있다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
-<ul> 
-<li> 1일차 </li>
-     <ol type="a">
-       <li> 해녀박물관 </li>
-       <li> 낚시체험 </li>
-     </ol>
-</li>
-<li>
-     <ol type="a" start="3">
-       <li> 용눈이오름 </li>
-       <li> 만장굴 </li>
-       <li> 카약체험 </li>
-      </ol>
-</li>
-</ul>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.<u> dl, dt, dd </u>태그는 설명 목록을 만들 때 사용한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  dl은 목록을 만들고, dt는 제목을, dd는 설명을 표시한다.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; → 예시
-<dl>
-    <dt>올레 1코스</dt>
-    <dd> 코스 : 시흥 초등학교 옆 - 광치기 해변 </dd>
-    <dd> 거리: 14.6km(4~5시간) </dd>
-    <dd> 난이도:중 </dd>
-    <dt>올레 2코스</dt>
-    <dd> 코스 : 광치기 해변 - 온평 포구 </dd>
-    <dd> 거리 : 14.5km(4~5시간) </dd>
-    <dd> 난이도 : 중 </dd>
-</dl>       <a href="#list"> 목록으로 돌아가기</a> </fieldset> 
-
-<br><br><br><br><br>
-
-<fieldset> 
-  <h2 id="day2"><b>DAY2 : 이미지맵, 앵커기능</b></h2><br>
-  <b>○ 이미지 맵 </b><br>
-&nbsp;&nbsp; - 정의 : 하나의 이미지에 여러 개의 링크를 거는 것<br>
-&nbsp;&nbsp; - 사용법 : 
-<fieldset>
-img src="이미지명.gif" alt="이미지가 출력이 안될시 뜨는 문구" usemap="#이미지맵이름" border="0" <br>
-map name="이미지맵이름"<br>
- area shape="링크영역모양" coords<br>="사각형왼쪽 위 좌표, 사각형왼쪽 아래 좌표,사각형 오른쪽 위 좌표, 사각형 오른쪽 아래 좌표" href="연결페이지" target="링크한 내용이 표시될 위치"<br>
-/map
-</fieldset> 
-
-  <b>○ 앵커기능 </b><br>
-&nbsp;&nbsp; - 정의 : 현재 페이지에서 원하는 곳으로 이동하게 해주는 기능<br>
-&nbsp;&nbsp; - 사용법 : <br>
-&nbsp;&nbsp; &nbsp;&nbsp; a href="#위치고유이름" 글자내용 /a 라고 써놓고 <br>
-&nbsp;&nbsp; &nbsp;&nbsp; 이동했으면 하는 위치에 id="위치고유이름" 태그를 걸어놓으면 이동한다.<br>
-&nbsp;&nbsp; &nbsp;&nbsp; 아래의 '목록으로 돌아가기'가 앵커기능을 수행한다.<br><br>
-<a href="#list"> 목록으로 돌아가기</a><br>
-
-
-        </body>
+            <h2 id="190716"><b>DAY2 : 이미지맵, 앵커기능</b></h2><br>
+                <b>○ 이미지 맵 </b><br>
+                &nbsp;&nbsp; - 정의 : 하나의 이미지에 여러 개의 링크를 거는 것<br>
+                &nbsp;&nbsp; - 사용법 : 
+                <fieldset>
+                img src="이미지명.gif" alt="이미지가 출력이 안될시 뜨는 문구" usemap="#이미지맵이름" border="0" <br>
+                map name="이미지맵이름"<br>
+                area shape="링크영역모양" coords<br>="사각형왼쪽 위 좌표, 사각형왼쪽 아래 좌표,사각형 오른쪽 위 좌표, 사각형 오른쪽 아래 좌표" href="연결페이지" target="링크한 내용이 표시될 위치"<br>
+                /map
+          
+          
+                <b>○ 앵커기능 </b><br>
+                &nbsp;&nbsp; - 정의 : 현재 페이지에서 원하는 곳으로 이동하게 해주는 기능<br>
+                &nbsp;&nbsp; - 사용법 : <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; a href="#위치고유이름" 글자내용 /a 라고 써놓고 <br>
+                &nbsp;&nbsp; &nbsp;&nbsp; 이동했으면 하는 위치에 id="위치고유이름" 태그를 걸어놓으면 이동한다.<br>
+                &nbsp;&nbsp; &nbsp;&nbsp; 아래의 '목록으로 돌아가기'가 앵커기능을 수행한다.<br><br>
+                <a href="#category"> 목록으로 돌아가기</a><br> 
+                </fieldset>
+        <br><br><br>
+        <div # = alljsjq> 
+        <h1>javascript & Jquery </h1>
+        ※ 클릭시 새 창으로 이동 ※ <br><br>
+          <div id = d190812>
+            <h3  id = "190812"> 190812</h3>
+            <ul>
+                <li><a href="./jsjq/0812/p.44.html" target="_blank"> 산술연산자 </a></li>
+                <li><a href="./jsjq/0812/p.45.html" target="_blank"> 문자 결합 연산자 </a></li>
+                <li><a href="./jsjq/0812/p.46.html" target="_blank"> 대입연산자 </a></li>   
+                <li><a href="./jsjq/0812/p.47.html" target="_blank"> 대입연산자2 </a></li> 
+                <li><a href="./jsjq/0812/p.48.html" target="_blank"> 증감연산자 </a></li>
+                <li><a href="./jsjq/0812/p.51.html" target="_blank"> 비교연산자 </a></li>    
+                <li><a href="./jsjq/0812/p.54.html" target="_blank"> 삼항 조건 연산자 </a></li>   
+                <li><a href="./jsjq/0812/p.55.html" target="_blank"> 적정체중 구하는 테스트기 </a></li>
+                <li><a href="./jsjq/0812/p.65.html" target="_blank"> else문 </a></li>
+                <li><a href="./jsjq/0812/p.65 external.html" target="_blank"> js 호출을 통한 else문 </a></li>
+                <li><a href="./jsjq/0812/p.51.html" target="_blank"> 스타일 else문 </a></li>      
+                <li><a href="./jsjq/0812/p.71.html" target="_blank"> 중첩if문 </a></li>   
+                <li><a href="./jsjq/0812/p.73.html" target="_blank"> 선택문 </a></li>
+                <li><a href="./jsjq/0812/p.74.html" target="_blank"> 반복문 </a></li>  
+                <li><a href="./jsjq/0812/p.81.html" target="_blank"> continue문 </a></li>
+                <li><a href="./jsjq/0812/p.89.html" target="_blank"> 브라우저객체모델 </a></li>
+                <li><a href="./jsjq/0812/p.91.html" target="_blank"> 내장객체 생성 </a></li> 
+                <li><a href="./jsjq/0812/p.93.html" target="_blank"> 날짜정보 객체 </a></li> 
+                <li><a href="./jsjq/0812/p.102.html" target="_blank"> 문자정렬 </a></li> 
+            </ul>
+          </div>  
+    </div>
+</section>
+</div>
+</body>
 </html>

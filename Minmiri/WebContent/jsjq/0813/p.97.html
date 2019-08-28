@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var game = prompt("가위바위보 중에 선택해주세요.", "");
+
+    var gameNum;
+    switch (game) {
+        case "가위" :
+            gameNum = 1; break;
+        case "바위" :
+            gameNum = 2; break;
+        case "보" :
+            gameNum = 3; break;
+        default :
+            alert("입력 오류");
+            location.reload(); //새로고침 
+    }
+
+    var com = Math.ceil(Math.random()*3);
+
+    document.write("<img src = \"images/math_img_" + com +".jpg\">"); //이게 없으면 컴퓨터가 뭘 냈는지 알수 없음.
+
+    if (gameNum == com) {
+        document.write("<img src = \"images/game_1.jpg\">"); 
+        //"큰따옴표" 인식을 위해서 역슬래쉬가 들어감.그게 약속임
+    } else {
+        document.write("<img src = \"images/game_2.jpg\">");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //5의 배수만 제외하고 나머지를 합산해서 출력하기
+        var x = 1;
+        var sum = 0;
+
+        do {
+            if(x%5==0) {
+                x++;
+                continue;
+            }
+            sum += x;
+            x++;
+        }while (x<=100)
+
+        while(true){
+            if (flag == true) break;
+        }
+
+
+        // for (var x = 1; x<=100; x++) {
+        //     if(x%5==0) continue;
+        //     sum+=x;
+        // }
+       
+        // while(x<=100) {
+        //     if(x%5==0) continue; 
+        //         //continue를 만나는 순간 다시 위로 돌아감. 그니까 반복문의 끝으로 이동함.
+        //         /* 조건식이 true가 되어 continue문이 수행되면 반복문의 끝으로 이동한다.
+        //            이때 반복문 전체를 벗어나지는 않는다.  */
+        //         sum+=x;
+        //         x++;
+        // }
+            document.write("5의 배수를 제외한 합산 결과 : " + sum);
+
+
+
+        /*
+        while (x<=100) {
+            if(x % 5==0) {
+                document.write(x);
+                break;
+            }
+            x++;
+        }*/
+
+
+        //document.write("sum 값은" + sum + "입니다.");
+    </script>
+</body>
+</html>

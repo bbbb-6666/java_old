@@ -1,0 +1,46 @@
+<!--이것은 서버에 연동을 시켜줘서 띄워주는 것.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p.324</title>
+    <script src = "js/jquery.js"></script>
+    <script>
+        $(function (){
+            $.ajax({
+                url : "data/MOCK_DATA.json",
+                dataType : "json",
+                success : function(data) {
+                    //url의 데이터를 받으면
+                    var tb = $("<table />");
+                    for(var i in data ){ //mock_data.json의 데이터라인들을 한줄씩 가져옴
+                        if(data.length>0) {
+                        var $id = data[i].id; //i번째의 id를 가져옴
+                        var $first_name = data[i].first_name;
+                        var $last_name = data[i].last_name;
+                        var $email = data[i].email;
+                        var $gender = data[i].gender;
+
+                        var row = $("<tr />").append(
+                            $("<td/>").text($id),
+                            $("<td/>").text($first_name),
+                            $("<td/>").text($last_name),
+                            $("<td/>").text($email),
+                            $("<td/>").text($gender) //td안에 각각 이 내용들을 넣어줌.
+                            );
+                        
+                            tb.append(row);
+                        }
+                        $(".wrap").append(tb);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap"></div>
+</body>
+</html>

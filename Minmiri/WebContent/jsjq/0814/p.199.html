@@ -1,0 +1,50 @@
+<!--p.191-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function(){
+            var obj = [{"area" : "서울"}, {"area":"부산"}, {"area": "전주"}]; 
+                //배열에 데이터를 하나씩 넣겠다.
+            $(obj).each(function(i, o){
+                console.log(i+" : ",o);
+            }); 
+                //오비제이에 대해서 이치라는 함수르 ㄹ활용할건데 여기에 펑션에서 두가지의 입력값을 넣을 거다.
+                //앞에 i에는 area가 들어가고 o에는 서울이 들어가고 이런식
+
+            console.log("=============THe END1");
+
+            $.each($("#menu2 li"), function(i, o){
+                console.log(i+" : ",o);
+            });
+
+            console.log("==========The ENd2");
+
+            $.each($("#menu2 li"), function(i){
+                console.log(i + " : ", $(this));
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1> 탐색선택자 </h1>
+    <ul id = "menu1">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+    </ul>
+    <ul id = "menu2">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+    </ul>
+</body>
+</html>

@@ -1,52 +1,68 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>민미리 홈페이지</title>
-        <script src="prefixfree.min.js"></script>
-        <style>
-            body{
-                background-color: #F0DFCC;
-                text-align: center;
-            }
-            #menubox{
-                background-color: #CFB095;
-                height: 200px;
-                margin : 0px;
-                padding : 1px;
-            }
-            #menubox ul li{
-                display: inline;
-                margin: 100px;
-                font-size: 25px;
-            }
-
-        </style>
-    </head>
-    <body>
-        <div id="menubox">
-            <ul>
-                <li><a href="home.html">HOME</a></li>
-                <li><a href="profile.html">PROFILE</a> </li>
-                <li><a href="example.html">EXAMPLE</a> </li>
-                <li><a href="form.html">FORM</a></li>
-            </ul>
-        </div>
-
-
-        <!--
-        <body topmargin="0"  leftmargin="0" marginwidth="0" marginheight="0">
-        <img src = "img/menu.png" alt="메뉴판" usemap="#favorites"> 
-        <map name="favorites">
-            <area shape = "rect" coords = "285,67,429,123" href="home.html" alt="홈">
-            <area shape = "rect" coords = "533,67,736,123" href="profile.html" alt="프로필">
-            <area shape = "rect" coords = "850,67,1082,123" href="example.html" alt="예시">
-            <area shape = "rect" coords = "1184,67,1342,123" href="form.html" alt="폼">
-        </map>-->
-<hr>
-        <img src = "img/welcome.png" alt="환영"> </div>
-<h1><span style="color:#CD0000">홈페이지에 오신 여러분들을</span></h1></div>
-<h1><span style="color:#CD0000">환영합니다</span></h1></div>
-<hr>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-size: 40px;
+    }
+    img {
+        max-width: 100%; /* 이미지의 최대사이즈 */
+        width /***/: auto; /* only IE8 */
+        height: auto;
+        vertical-align: bottom;
+    }
+    #top{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 4rem;
+        position : absolute;
+        top: 350px;
+        right : 80px;
+    }
+    #menu{
+        position : absolute;
+        top : 370px;
+        right: 70px;
+        width: 780;
+        height: 266px;
+        padding : 5px;
+        float: left;
+        color: white;
+    }
+    #menu ul li {
+        display:inline;                         
+        border-left:0px ;   
+        font-size: 2.5rem;   
+        padding:10px; 
+        color: white;
+        font-family: 'Source Sans Pro', sans-serif;   
+        text-align: right;        
+    }
+</style>
+<style type="text/css">
+    a:link {text-decoration: none;}
+</style>
+<body>
+    <section>
+        <img src="img/movieprojector.png" alt="homeimg">
+    </section>
+    <div id = "top">
+        <b><i>Min miri</b></i>
+    </div>
+    <div id = "menu">
+        <ul>
+            <li><b><a href="home.html" style="color: black;">HOME</a></b></li>
+            <li><b><a href="profile.html" style="color: black;">PROFILE</a></b> </li>
+            <li><b><a href="example.html" style="color: black;">EXAMPLE</a></b> </li>
+            <li><b><a href="form.html" style="color: black;">FORM</a></b></li>
+        </ul>
+    </div>
+</body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var str = new String(); //스트링 형태의 객체 생성
+    str = "web he she he";
+    document.write(str.charAt(2)+"<br>");
+    document.write(str.indexOf("he")+"<br>");
+    document.write(str.lastIndexOf("he")+"<br>");
+    document.write(str.match("he")+"<br>");
+    document.write(str.match("boy")+"<br>");
+    document.write(str.charAt("boy")+"<br>");
+    document.write(str.replace("web","html")+"<br>");
+    document.write(str.slice(3, 7)+"<br>");
+    document.write(str.substring(3, -3)+"<br>"); 
+        /*substring : 두번째 숫자에 양수 써도되는데 음수도 써도됨.    
+        */
+</script>
+</body>
+</html>

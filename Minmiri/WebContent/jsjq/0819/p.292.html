@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p.292</title>
+    <script src = "js/jquery.js"></script>
+    <script>
+    $(function(){
+        //초기에는 btn2를 숨기기
+        $(".btn2").hide();
+
+        $(".btn1").on("click", function(){
+            $(".box").slideUp(1000, "linear", //리니어 : 순차적으로 되는 것. 1초간 리니어의 기법으로.
+            function() {
+                $(".btn1").hide();
+                $(".btn2").show();
+            });
+        });
+
+        $(".btn2").on("click", function() {
+            $(".box").fadeIn(1000, "swing",
+            function() {
+                $(".btn1").hide();
+                $(".btn2").show();
+            });
+        });
+
+        $(".btn3").on("click", function() {
+            $(".box").slideToggle(1000, "linear");
+        });
+
+        $(".btn4").on("click", function() {
+            $(".box").fadeTo("fast", 0.3);
+        });
+
+        $(".btn5").on("click", function() {
+            $(".box").fadeTo("fast", 1);
+        });
+    });
+    </script>
+    <style>
+        .content{
+            width: 400px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button class="btn1"> slideUp </button>
+        <button class="btn2"> fadeIn </button>
+    </p>
+    <p>
+        <button class="btn3"> toggleSlide </button>
+    </p>
+    <p>
+        <button class="btn4"> fadeTo(0.3) </button>
+        <button class="btn5"> fadeTo(1) </button>
+    </p>
+    <div class="box">
+        <div class = "content">
+            지방의회의 조직·권한·의원선거와 지방자치단체의 장의 선임방법 기타 지방자치단체의 조직과 운영에 관한 사항은 법률로 정한다. 비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도, 언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할 수 있다.
+        </div>
+    </div>
+</body>
+</html>

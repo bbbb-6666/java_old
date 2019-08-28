@@ -1,0 +1,39 @@
+<!--p.191-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+
+    <script>
+        $(function() {
+            var result1 = $("#user_name").val(); 
+            console.log(result1);
+                //유저네임의 밸류값을 가져와서 콘솔에다가 찍음
+            $("#user_name").val("홍길동"); //유저네임에 밸류값을 홍길동으로 찍음
+
+            var result2 = $("#user_id").val(); 
+            console.log(result2);
+            $("#user_id").prop("value", "defaultValue"); //value값을 뒤에껄로 수정할 수 있다.
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        <strong>폼 관련 객체 조작 및 생성</strong>
+    </h1>
+    <form action="#" id = "form_1">
+        <p>
+            <label for = "user_name">이름</label> <!--로그인하기 위해서 이름쓰는 부분--> 
+            <input type="text" name = "user_name" id = "user_name" value="민미리"> <!--value : 기본값-->
+        </p>
+        <p>
+            <label for = "user_id">아이디</label> <!--로그인하기 위해서 이름쓰는 부분--> 
+            <input type="text" name = "user_nid" id = "user_id" value="bb-bb-bb"> <!--value : 기본값-->
+        </p>
+    </form>
+</body>
+</html>

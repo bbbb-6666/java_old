@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var tel = prompt("당신의 전화번호를 입력하세요 (000-0000-0000)", "");
+
+    //substring 이용
+    // tel1 = tel.substring(0,3);
+    // tel2 = tel.substring(4,7);
+    // tel3 = tel.substring(8,12);
+    // document.write(tel1+"<br>");
+    // document.write(tel2+"<br>");
+    // document.write(tel3+"<br>");
+
+    //split 이용
+    var arr = tel.split("-");
+
+    for(var i in arr)
+        document.write(trim(arr[i]) +"<br>");
+
+    // var first = prompt("전화번호 중 국번을 입력하라 (3자리)", "");
+    // var second = prompt("전화번호 중 중간번호을 입력하라 (3자리)", "");
+    // var third = prompt("전화번호 중 국번을 입력하라 (4자리)", "");
+
+    // document.write(first+"-"+second+"-"+third);
+</script>
+</body>
+</html>

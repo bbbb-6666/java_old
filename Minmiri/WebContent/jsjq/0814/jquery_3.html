@@ -1,0 +1,38 @@
+<!--p.191-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function(){
+            $("#menu li").slice(1, 4).css("color", "red").css("border", "1px solid #f00").css("background", "black");
+                //인덱스는 0번부터 세기 때문에 두번째줄부터 적용이 됨. child는 순서적인거가 필요할때.
+            //$("#menu li:nth-child(2)").css("color", "red").css("border", "1px solid #f00").css("background", "black");
+                //두번째 애에게 해당되는 기능 부여
+            //$("#menu li:odd").css("color", "red").css("border", "1px solid #f00").css("background", "black");
+            //$("#menu li:even").css("color", "red").css("border", "1px solid #f00").css("background", "yellow");
+                //홀수짝수 적용
+            //$("#menu li:first").css("color", "red").css("border", "1px solid #f00").css("background", "black");
+                //메뉴중에 li 중에서 첫번째 아이만 css 적용
+            //$("#menu li:last").css("color", "red").css("border", "1px solid #f00");
+                //메뉴중에 li 중에서 마지막껏만 css 적용
+        });
+    </script>
+</head>
+<body>
+    <h1> 탐색선택자 </h1>
+    <ul id = "menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+</body>
+</html>

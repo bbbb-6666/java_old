@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function(){
+            $("*").css("color", "blue") //아이디 앞네는 #을 찍을 것 // $(*)라고 하면 모든 애들이 블루글씨가 됨
+        });
+    </script>
+</head>
+<body>
+    <h1 id = "title1"> 제목1 표시부</h1>
+    <h2 id = "title2"> 제목2 표시부</h1>
+</body>
+</html>

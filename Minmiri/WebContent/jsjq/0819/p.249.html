@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = "js/jquery.js"></script>
+<script>
+    $(function() {
+        //단독 이벤트 처리
+        $("#btn1").click(function(){
+            $("#btn1").parent().next().css({"color":"#f00"});
+        });
+
+        //그룹 이벤트 처리
+        $("#btn2").on({
+            "mouseover focus" : function() {
+                $("#btn2").parent().next()
+                .css({"color":"#0f0"});
+            }, //여러가지 이벤트들을 입힐때는 콤마(,)를 사용해서 계속 넣으면 됨.
+            "mouseover blur" : function() {
+                $("#btn2").parent().next()
+                .css({"color":"#000"});
+            }
+        });
+        //이벤트를 제거하는 이벤트
+        //$("#btn1").off("click");
+        //$("#btn2").off("mouseover focus");
+        
+         $("#btn1").click(); 
+         $("#btn2").trigger("mouseover");
+            //여기에 왔을때 자동으로(강제로) 클릭하는 기능 다음에 바로 마우스오버기능이 실행됨
+        
+        //기본 이벤트 방지
+            $("#btn3").click(function(e){
+            e.preventDefault();
+        }); //눌러도 네이버로 이동하지 않음
+
+        //특정 기능 숨기기
+        $("#btn4").on("mouseover focus", function() {
+            $(".txt4").hide(); 
+            //버튼에 마우스를 갖다대면 txt4에 대한 내용이 숨겨짐
+        }); 
+    });
+</script>
+</head>
+<body>
+    <p>
+        <button id = "btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button id = "btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    <p>
+        <a href = "http://www.naver.com" id ="btn3">네이버로 가기</a>
+    </p>
+    <button id="btn4"> 버튼4 </button>
+    <p class="txt4">내용4</p>
+</body>
+</html>

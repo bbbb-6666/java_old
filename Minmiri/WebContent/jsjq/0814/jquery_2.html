@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function(){
+            $(".txt1").siblings().css("color", "red").css("border", "1px solid #f00");
+                //형제자매들을 찾아서 css 이 기능 부여
+            //$(".txt1").closest("div").css("color", "red").css("border", "1px solid #f00");
+                //txt로부터 가장 가까운 div에 css를 입힘
+            //$("#inner_wrap>h1").css("color", "red").css("border", "1px solid #f00");
+                //inner wrap 안에 있는 h1들에게 효과를 부여함
+            //$("h2").next().css("color", "green");
+            //$("h1 p").css("border", "1px solid #f00");
+            //$("h2").prevAll().css("border", "1px solid #f00"); //prevall은 모든 상위요소 다
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id = "inner_wrap">
+            <h1>제목 1</h1>
+            <h1>제목 1</h1>
+                <p class="txt1"> 제목1의 내용</p> <!--txt로 부터 가장 가까운 div를 찾을것임-->
+            <h2>제목 2</h2>
+            <p>내용 1</p>
+            <p>내용 2</p>
+            <p>내용 3</p>
+        </div>
+    </div>
+</body>
+</html>

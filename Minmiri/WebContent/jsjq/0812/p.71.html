@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s_id = "root";
+        var s_pw = 1234;
+
+        var id = prompt("당신의 아이디는?", "");
+        var pw = prompt("당신의 패스워드는?", "");
+
+        if (id== s_id) {
+            if(pw==s_pw) {
+                document.write(id+"님 로그인되셨습니다.");
+            }else {
+                alert("패스워드가 잘못 입력되었습니다.");
+                location.reload();
+            }
+        }else{
+            alert("패스워드가 잘못 입력되었습니다.");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

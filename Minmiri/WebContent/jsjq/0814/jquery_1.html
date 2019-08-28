@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+    <script src = "js/jquery.js"></script> <!--다운로드 받은 파일을 실행시키긔-->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script> 
+            <!--이렇게 해도 되는데 이러면 인터넷이 연결되어있어야함. 
+                그래서 보통은 다운로드 받아서 파일을 실행시킴-->
+    <script>
+        $(function(){
+            $("h1.title4, h2#title3").css("color", "blue").css("border", "1px dashed #f00") 
+                //css를 여러개의 그룹에 대해 적용하고 싶을때.
+            //$("h1.title4").css("color", "blue").css("border", "1px dashed #f00") 
+                //클래스는 점을 찍어야함.
+            //$("h2#title3").css("color", "blue").css("border", "1px dashed #f00") 
+                //h2 태그를 가진애들중 title3만 하고 싶을때
+            //$("h2").css("color", "blue").css("border", "1px dashed #f00") 
+                //태그를 넣어도 효과가 주어짐.
+            //$(".title1").css("color", "blue").css("border", "1px dashed #f00")
+                //class는 아이디명 앞에 점을 찍어줌.    //f00은 빨간색 ff0000을 단축해서 쓸 수 있음 3자리로.
+        });
+    </script>
+</head>
+<body>
+    <h1 class = "title1"> 제목1 표시부</h1>
+    <h2 id = "title2"> 제목2 표시부</h1>
+    <h2 id = "title3"> 제목3 표시부</h2>
+    <h1 class = "title4"> 제목4 표시부</h1>
+</body>
+</html>

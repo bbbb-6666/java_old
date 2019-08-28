@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p.299</title>
+    <script src = "js/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".txt1").animate({marginLeft:"300px"}, 1000);
+                //1초동안 왼쪽으로 삼백픽셀정도 움직임
+
+            $(".txt2").delay(3000).animate({marginLeft:"300px"}, 1000);
+                //처음에 3초 기다렸다가 현재 마진의 왼쪽으로 1초동안 300픽셀가라 
+
+            $(".btn1").on("click", moveElement); //클릭을 하면 moveelement 함수가 발현됨
+
+            function moveElement() {
+                $(".txt3").animate({marginLeft:"+=50px"}, 800);
+
+                $(".txt4").animate({marginLeft:"+=50px"}, 800);
+                $(".txt4").stop(); //버튼을 눌러도 실행이 되지 않음.
+
+                $(".txt5").animate({marginLeft:"+=50px"}, 800);
+                $(".txt5").stop(true, true); //이동하는 장면 없이 바로 종료시점으로 이동.
+            }
+        });
+    </script>
+    <style>
+        p{width: 110px; text-align: center;}
+        .txt1{background-color: aqua;}
+        .txt2{background-color: pink;}
+        .txt3{background-color: orange;}
+        .txt4{background-color: green;}
+        .txt5{background-color: gold;}
+    </style>
+</head>
+<body>
+    <p class="txt1">효과1</p>
+    <p class="txt2">효과2 <br> delay(3000) </p>
+    <p><button class="btn1">50px 전진</button></p>
+    <p class="txt3">효과3</p>
+    <p class="txt4">효과4<br>stop()</p>
+    <p class="txt5">효과5<br>stop(true, true)</p>
+</body>
+</html>
