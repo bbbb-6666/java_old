@@ -7,12 +7,12 @@
 </head>
 <body>
 	<%
-		String shipping_cartId = "";
-		String shipping_name = "";
-		String shipping_shippingDate = "";
-		String shipping_country = "";
-		String shipping_zipCode = "";
-		String shipping_addressName = "";		
+		String shipping_c_cartId = "";
+		String shipping_c_name = "";
+		String shipping_c_shippingDate = "";
+		String shipping_c_country = "";
+		String shipping_c_zipCode = "";
+		String shipping_c_addressName = "";		
 
 		Cookie[] cookies = request.getCookies();
 
@@ -20,10 +20,10 @@
 			for (int i = 0; i < cookies.length; i++) {
 				Cookie thisCookie = cookies[i];
 				String n = thisCookie.getName();
-				if (n.equals("Shipping_cartId"))
-					shipping_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-				if (n.equals("Shipping_shippingDate"))
-					shipping_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+				if (n.equals("Shipping_c_cartId"))
+					shipping_c_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+				if (n.equals("Shipping_c_shippingDate"))
+					shipping_c_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
 			}
 		}
 	%>
@@ -35,8 +35,8 @@
 	</div>
 	<div class="container">
 		<h2 class="alert alert-danger">주문해주셔서 감사합니다.</h2>
-		<p>주문은	<%	out.println(shipping_shippingDate);	%>에 배송될 예정입니다! !	
-		<p>주문번호 :	<%	out.println(shipping_cartId);	%>
+		<p>주문은	<%	out.println(shipping_c_shippingDate);	%>에 배송될 예정입니다! !	
+		<p>주문번호 :	<%	out.println(shipping_c_cartId);	%>
 	</div>
 	<div class="container">
 		<p><a href="./products.jsp" class="btn btn-secondary"> &laquo; 상품 목록</a>
@@ -49,30 +49,30 @@
 	for (int i = 0; i < cookies.length; i++) {
 		Cookie thisCookie = cookies[i];
 		String n = thisCookie.getName();
-		if (n.equals("Customer_Id"))
+		if (n.equals("Customer_c_Id"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Customer_name"))
+		if (n.equals("Customer_c_name"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Customer_phoneNumber"))
+		if (n.equals("Customer_c_phoneNumber"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Customer_country"))
+		if (n.equals("Customer_c_country"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Customer_zipCode"))
+		if (n.equals("Customer_c_zipCode"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Customer_addressName"))
+		if (n.equals("Customer_c_addressName"))
 			thisCookie.setMaxAge(0);
 
-		if (n.equals("Shipping_cartId"))
+		if (n.equals("Shipping_c_cartId"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Shipping_name"))
+		if (n.equals("Shipping_c_name"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Shipping_shippingDate"))
+		if (n.equals("Shipping_c_shippingDate"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Shipping_country"))
+		if (n.equals("Shipping_c_country"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Shipping_zipCode"))
+		if (n.equals("Shipping_c_zipCode"))
 			thisCookie.setMaxAge(0);
-		if (n.equals("Shipping_addressName"))
+		if (n.equals("Shipping_c_addressName"))
 			thisCookie.setMaxAge(0);
 		
 		response.addCookie(thisCookie);

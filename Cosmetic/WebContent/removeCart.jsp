@@ -11,7 +11,7 @@
 
 	ProductRepository dao = ProductRepository.getInstance();
 	
-	Product cosmetic = dao.getcosmeticById(c_id);
+	Product cosmetic = dao.productById(c_id);
 	if (cosmetic == null) {
 		response.sendRedirect("exceptionNoProductId.jsp");
 	}

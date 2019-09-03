@@ -6,14 +6,14 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String cartId = session.getId();
+	String c_cartId = session.getId();
 
-	String shipping_cartId = "";
-	String shipping_name = "";
-	String shipping_shippingDate = "";
-	String shipping_country = "";
-	String shipping_zipCode = "";
-	String shipping_addressName = "";
+	String shipping_c_cartId = "";
+	String shipping_c_name = "";
+	String shipping_c_shippingDate = "";
+	String shipping_c_country = "";
+	String shipping_c_zipCode = "";
+	String shipping_c_addressName = "";
 	
 	Cookie[] cookies = request.getCookies();
 
@@ -21,18 +21,18 @@
 		for (int i = 0; i < cookies.length; i++) {
 			Cookie thisCookie = cookies[i];
 			String n = thisCookie.getName();
-			if (n.equals("Shipping_cartId"))
-				shipping_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_name"))
-				shipping_name = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_shippingDate"))
-				shipping_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_country"))
-				shipping_country = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_zipCode"))
-				shipping_zipCode = URLDecoder.decode((thisCookie.getValue()), "utf-8");
-			if (n.equals("Shipping_addressName"))
-				shipping_addressName = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_cartId"))
+				shipping_c_cartId = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_name"))
+				shipping_c_name = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_shippingDate"))
+				shipping_c_shippingDate = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_country"))
+				shipping_c_country = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_zipCode"))
+				shipping_c_zipCode = URLDecoder.decode((thisCookie.getValue()), "utf-8");
+			if (n.equals("Shipping_c_addressName"))
+				shipping_c_addressName = URLDecoder.decode((thisCookie.getValue()), "utf-8");
 		}
 	}
 %>
@@ -54,18 +54,18 @@
 		</div>
 		<div class="row justify-content-between">
 			<div class="col-4" align="left">
-				<strong>배송 주소</strong> <br> 성명 : <% out.println(shipping_name); %><br> 
-				우편번호 : <% 	out.println(shipping_zipCode);%><br> 
-				주소 : <%	out.println(shipping_addressName);%>(<%	out.println(shipping_country);%>)<br>
+				<strong>배송 주소</strong> <br> 성명 : <% out.println(shipping_c_name); %><br> 
+				우편번호 : <% 	out.println(shipping_c_zipCode);%><br> 
+				주소 : <%	out.println(shipping_c_addressName);%>(<%	out.println(shipping_c_country);%>)<br>
 			</div>
 			<div class="col-4" align="right">
-				<p>	<em>배송일: <% out.println(shipping_shippingDate);	%></em>
+				<p>	<em>배송일: <% out.println(shipping_c_shippingDate);	%></em>
 			</div>
 		</div>
 		<div>
 			<table class="table table-hover">			
 			<tr>
-				<th class="text-center">도서</th>
+				<th class="text-center">상품</th>
 				<th class="text-center">#</th>
 				<th class="text-center">가격</th>
 				<th class="text-center">소계</th>
@@ -77,13 +77,13 @@
 					cartList = new ArrayList<Product>();
 				for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
 					Product product = cartList.get(i);
-					int total = product.getUnitPrice() * product.getQuantity();
+					int total = product.getC_price() * product.getQuantity();
 					sum = sum + total;
 			%>
 			<tr>
-				<td class="text-center"><em><%=product.getPname()%> </em></td>
+				<td class="text-center"><em><%=product.getC_name()%> </em></td>
 				<td class="text-center"><%=product.getQuantity()%></td>
-				<td class="text-center"><%=product.getUnitPrice()%>원</td>
+				<td class="text-center"><%=product.getC_price()%>원</td>
 				<td class="text-center"><%=total%>원</td>
 			</tr>
 			<%
@@ -96,7 +96,7 @@
 				<td class="text-center text-danger"><strong><%=sum%> </strong></td>
 			</tr>
 			</table>			
-				<a href="./ShippingInfo.jsp?cartId=<%=shipping_cartId%>"class="btn btn-secondary" role="button"> 이전 </a>
+				<a href="./ShippingInfo.jsp?c_cartId=<%=shipping_c_cartId%>"class="btn btn-secondary" role="button"> 이전 </a>
 				<a href="./thankCustomer.jsp"  class="btn btn-success" role="button"> 주문 완료 </a>
 				<a href="./checkOutCancelled.jsp" class="btn btn-secondary"	role="button"> 취소 </a>			
 		</div>

@@ -5,8 +5,8 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
-<%
-	String cartId = session.getId();
+<% 
+	String c_cartId = session.getId();
 %>
 <title>장바구니</title>
 </head>
@@ -21,8 +21,8 @@
 		<div class="row">
 			<table width="100%">
 				<tr>
-					<td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
-					<td align="right"><a href="./shippingInfo.jsp?cartId=<%= cartId %>" class="btn btn-success">주문하기</a></td>
+					<td align="left"><a href="./deleteCart.jsp?c_cartId=<%=c_cartId%>" class="btn btn-danger">삭제하기</a></td>
+					<td align="right"><a href="./shippingInfo.jsp?c_cartId=<%= c_cartId%>" class="btn btn-success">주문하기</a></td>
 				</tr>
 			</table>
 		</div>
@@ -43,13 +43,13 @@
 
 					for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
 						Product product = cartList.get(i);
-						int total = product.getC_price() * product.getC_quantity();
+						int total = product.getC_price() * product.getQuantity();
 						sum = sum + total;
 				%>
 				<tr>
 					<td><%=product.getC_id()%> - <%=product.getC_name()%></td>
 					<td><%=product.getC_price()%></td>
-					<td><%=product.getC_quantity()%></td>
+					<td><%=product.getQuantity()%></td>
 					<td><%=total%></td>
 					<td><a href="./removeCart.jsp?id=<%=product.getC_id()%>" class="badge badge-danger">삭제</a></td>
 				</tr>

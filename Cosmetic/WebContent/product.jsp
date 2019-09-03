@@ -1,7 +1,5 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ page errorPage="exceptionNoProductId.jsp"%>
-<%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
@@ -23,13 +21,8 @@
 			<h1 class="display-3">상품 정보</h1>
 		</div>
 	</div>
-		<%
-		String c_id = request.getParameter("c_id");
-		ProductRepository dao = ProductRepository.getInstance();
-		Product product = dao.getcosmeticById("c_id");
-		%>
 	<!-- db 연결하기 -->
-		<%@ include file="dbconn.jsp" %>
+			<%@ include file="dbconn.jsp" %>
 			
 			<!-- db로부터 상품 목록(cosmetic)을 불러와 웹에 표시하기  -->
 			<%
@@ -45,17 +38,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<img src="D:/GitHub/java/Cosmetic/WebContent/resources/img/<%=product.getC_filename()%>" style="width: 100%" />
+				<img src="c:/upload/<%=product.getC_filename()%>" style="width: 100%" />
 			</div>
 			<div class="col-md-6">
-				<h3><%=product.getC_name()%></h3>
-				<p><%=product.getC_description()%>
-				<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getC_id()%></span>
-				<p><b>제조사</b> : <%=product.getC_manufacturer()%>
-				<p><b>분류</b> : <%=product.getC_category()%>
-				<p><b>재고 수</b> : <%=product.getC_unitsinstock()%>
-				<h4><%=product.getC_price()%>원</h4>
-				<p><form name="addForm" action="./addCart.jsp?id=<%=product.getC_id()%>" method="post">
+				<h3><%=rs.getC_name()%></h3>
+				<p><%=product.getDescription()%>
+				<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getProductId()%></span>
+				<p><b>제조사</b> : <%=product.getManufacturer()%>
+				<p><b>분류</b> : <%=product.getCategory()%>
+				<p><b>재고 수</b> : <%=product.getUnitsInStock()%>
+				<h4><%=product.getUnitPrice()%>원</h4>
+				<p><form name="addForm" action="./addCart.jsp?id=<%=product.getProductId()%>" method="post">
 					<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a>
 					<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a> 
 					<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
@@ -78,3 +71,4 @@
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
+

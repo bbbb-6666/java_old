@@ -3,25 +3,25 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	Cookie cartId = new Cookie("Shipping_cartId", URLEncoder.encode(request.getParameter("cartId"), "utf-8"));
-	Cookie name = new Cookie("Shipping_name", URLEncoder.encode(request.getParameter("name"), "utf-8"));
-	Cookie shippingDate = new Cookie("Shipping_shippingDate", URLEncoder.encode(request.getParameter("shippingDate"), "utf-8"));
-	Cookie country = new Cookie("Shipping_country",	URLEncoder.encode(request.getParameter("country"), "utf-8"));
-	Cookie zipCode = new Cookie("Shipping_zipCode", URLEncoder.encode(request.getParameter("zipCode"), "utf-8"));
-	Cookie addressName = new Cookie("Shipping_addressName", URLEncoder.encode(request.getParameter("addressName"), "utf-8"));
+	Cookie c_cartId = new Cookie("Shipping_c_cartId", URLEncoder.encode(request.getParameter("c_cartId"), "utf-8"));
+	Cookie c_name = new Cookie("Shipping_c_name", URLEncoder.encode(request.getParameter("c_name"), "utf-8"));
+	Cookie c_shippingDate = new Cookie("Shipping_c_shippingDate", URLEncoder.encode(request.getParameter("c_shippingDate"), "utf-8"));
+	Cookie c_country = new Cookie("Shipping_c_country",	URLEncoder.encode(request.getParameter("c_country"), "utf-8"));
+	Cookie c_zipCode = new Cookie("Shipping_c_zipCode", URLEncoder.encode(request.getParameter("c_zipCode"), "utf-8"));
+	Cookie c_addressName = new Cookie("Shipping_c_addressName", URLEncoder.encode(request.getParameter("c_addressName"), "utf-8"));
 
-	cartId.setMaxAge(365 * 24 * 60 * 60);
-	name.setMaxAge(365 * 24 * 60 * 60);
-	zipCode.setMaxAge(365 * 24 * 60 * 60);
-	country.setMaxAge(365 * 24 * 60 * 60);
-	addressName.setMaxAge(365 * 24 * 60 * 60);
+	c_cartId.setMaxAge(365 * 24 * 60 * 60);
+	c_name.setMaxAge(365 * 24 * 60 * 60);
+	c_zipCode.setMaxAge(365 * 24 * 60 * 60);
+	c_country.setMaxAge(365 * 24 * 60 * 60);
+	c_addressName.setMaxAge(365 * 24 * 60 * 60);
 
-	response.addCookie(cartId);
-	response.addCookie(name);
-	response.addCookie(shippingDate);
-	response.addCookie(country);
-	response.addCookie(zipCode);
-	response.addCookie(addressName);
+	response.addCookie(c_cartId);
+	response.addCookie(c_name);
+	response.addCookie(c_shippingDate);
+	response.addCookie(c_country);
+	response.addCookie(c_zipCode);
+	response.addCookie(c_addressName);
 
 	response.sendRedirect("orderConfirmation.jsp");
 %>
