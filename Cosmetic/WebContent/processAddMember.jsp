@@ -25,22 +25,20 @@
 %>
 
 <sql:setDataSource var="dataSource"
-	url="jdbc:mysql://localhost:3306/WebMarketDB"
-	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+	url="jdbc:oracle:thin:@localhost:1521:xe"
+	driver="oracle.jdbc.driver.OracleDriver" user="madang" password="madang" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-   UPDATE MEMBER SET PASSWORD=?, NAME=?, GENDER=?, BIRTH=?, MAIL=?, PHONE=?, ADDRESS=? WHERE ID=?
+   INSERT INTO CMEMBER VALUES (?, ?, ?, ?, ?, ?)
+   <sql:param value="<%=id%>" />
 	<sql:param value="<%=password%>" />
 	<sql:param value="<%=name%>" />
-	<sql:param value="<%=gender%>" />
-	<sql:param value="<%=birth%>" />
-	<sql:param value="<%=mail%>" />
 	<sql:param value="<%=phone%>" />
 	<sql:param value="<%=address%>" />
-	<sql:param value="<%=id%>" />
+	<sql:param value="<%=timestamp%>" />
 </sql:update>
 
 <c:if test="${resultSet>=1}">
-	<c:redirect url="resultMember.jsp?msg=0" />
+	<c:redirect url="resultMember.jsp?msg=1" />
 </c:if>
 

@@ -9,9 +9,8 @@
 		return;
 	}
 
-	ProductRepository dao = ProductRepository.getInstance();
-	
-	Product cosmetic = dao.productById(c_id);
+	ProductRepository dao = ProductRepository.getInstance();	
+	Product cosmetic = dao.getProductById(c_id);
 	if (cosmetic == null) {
 		response.sendRedirect("exceptionNoProductId.jsp");
 	}

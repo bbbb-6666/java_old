@@ -10,11 +10,11 @@
 %>
 
 <sql:setDataSource var="dataSource"
-	url="jdbc:mysql://localhost:3306/WebMarketDB"
-	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+	url="jdbc:oracle:thin:@localhost:1521:xe"
+	driver="oracle.jdbc.driver.OracleDriver" user="madang" password="madang" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
-   SELECT * FROM MEMBER WHERE ID=? and password=?  
+   SELECT * FROM CMEMBER WHERE M_ID=? and M_PASSWORD=?  
    <sql:param value="<%=id%>" />
 	<sql:param value="<%=password%>" />
 </sql:query>

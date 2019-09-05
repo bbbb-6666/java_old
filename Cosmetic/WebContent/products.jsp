@@ -26,11 +26,11 @@
             while (rs.next()) {
          %>
          <div class="col-md-4">
-            <img src="./resources/images/<%=rs.getString("c_filename")%>" style="width: 100%">
+            <img src="./resources/img/<%=rs.getString("c_filename")%>" style="width: 100%">
             <h3><%=rs.getString("c_name")%></h3>
             <p><%=rs.getString("c_description")%>
             <p><%=rs.getString("c_price")%>원
-            <p><a href="./product.jsp?id=<%=rs.getString("c_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a>
+            <p><a href="./product.jsp?c_id=<%=rs.getString("c_id")%>"class="btn btn-secondary" role="button">상세 정보 &raquo;></a>
          </div>
          <%
             }

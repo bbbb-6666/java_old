@@ -42,6 +42,7 @@
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\USER\Desktop\Cosmetic"/>
 			<item value="C:\Users\USER\Desktop\으노기2.3 교재소스 모음\src"/>
 			<item value="E:\4. homework\jsp\cosmetic"/>
 		</list>

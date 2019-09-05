@@ -42,16 +42,16 @@
 						cartList = new ArrayList<Product>();
 
 					for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
-						Product product = cartList.get(i);
-						int total = product.getC_price() * product.getQuantity();
+						Product cosmetic = cartList.get(i);
+						int total = cosmetic.getC_price() * cosmetic.getQuantity();
 						sum = sum + total;
 				%>
 				<tr>
-					<td><%=product.getC_id()%> - <%=product.getC_name()%></td>
-					<td><%=product.getC_price()%></td>
-					<td><%=product.getQuantity()%></td>
+					<td><%=cosmetic.getC_id()%> - <%=cosmetic.getC_name()%></td>
+					<td><%=cosmetic.getC_price()%></td>
+					<td><%=cosmetic.getQuantity()%></td>
 					<td><%=total%></td>
-					<td><a href="./removeCart.jsp?id=<%=product.getC_id()%>" class="badge badge-danger">삭제</a></td>
+					<td><a href="./removeCart.jsp?c_id=<%=cosmetic.getC_id()%>" class="badge badge-danger">삭제</a></td>
 				</tr>
 				<%
 					}

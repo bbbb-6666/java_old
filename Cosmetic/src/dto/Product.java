@@ -1,7 +1,7 @@
  package dto;
 
 import java.io.Serializable;
-
+import dao.ProductRepository;
 public class Product implements Serializable{
 	
 
@@ -26,7 +26,6 @@ public class Product implements Serializable{
 		this.c_name = c_name;
 		this.c_price = c_price;
 	}
-
 	
 	public String getC_id() {
 		return c_id;
@@ -99,7 +98,6 @@ public class Product implements Serializable{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
 
 	
 }

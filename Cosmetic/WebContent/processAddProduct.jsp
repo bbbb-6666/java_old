@@ -8,62 +8,57 @@
 	request.setCharacterEncoding("UTF-8");
 
 	String filename = "";
-	String realFolder = "D:\\Github\\java\\javabasic\\Cosmetic\\WebContent\\resources\\img"; // 경로 확인하기
-	String encType = "utf-8"; //인코딩 타입
-	int maxSize = 5 * 1024 * 1024; //최대 업로드될 파일의 크기5Mb
+	String realFolder = "D://GitHub//java//Cosmetic//WebContent//resources//img//"; //웹 애플리케이션상의 절대 경로
+	int maxSize = 5 * 1024 * 1024; //최대 업로드될 파일의 크기 5MB
+	String encType = "utf-8"; //인코딩 유형
 
-	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+	MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType,
+			new DefaultFileRenamePolicy());
 
+	String c_id = multi.getParameter("c_id");
+	String c_name = multi.getParameter("c_name");
+	Integer c_price = Integer.parseInt(multi.getParameter("c_price"));
+	String c_description = multi.getParameter("c_description");
+	String c_manufacturer = multi.getParameter("c_manufacturer");
+	String c_category = multi.getParameter("c_category");
+	Integer c_unitsinstock = Integer.parseInt(multi.getParameter("c_unitsinstock"));
 	
-	// 테이블명, 상품변수 내용 수정하기
-	String productId = multi.getParameter("productId");
-	String name = multi.getParameter("name");
-	String unitPrice = multi.getParameter("unitPrice");
-	String description = multi.getParameter("description");
-	String manufacturer = multi.getParameter("manufacturer");
-	String category = multi.getParameter("category");
-	String unitsInStock = multi.getParameter("unitsInStock");
-	String condition = multi.getParameter("condition");
-
 	Integer price;
 
-	if (unitPrice.isEmpty())
+ 	/*if (price.isEmpty())
 		price = 0;
 	else
-		price = Integer.valueOf(unitPrice);
+		price = Integer.valueOf(unitPrice); */
 
-	long stock;
+ 	long stock;
 
-	if (unitsInStock.isEmpty())
+	/* if (c_unitsinstock.isEmpty())
 		stock = 0;
 	else
-		stock = Long.valueOf(unitsInStock);
-	
+		stock = Long.valueOf(c_unitsinstock); */
+
 	Enumeration files = multi.getFileNames();
 	String fname = (String) files.nextElement();
-	String fileName = multi.getFilesystemName(fname);
+	String c_filename = multi.getFilesystemName(fname);
 	
-	PreparedStatement pstmt = null;	
+	PreparedStatement pstmt = null;
 	
-	String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
+	String sql = "insert into cosmetic values(?, ?, ?, ?, ?, ?, ?, ?)";
 	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1, productId);
-	pstmt.setString(2, name);
-	pstmt.setInt(3, price);
-	pstmt.setString(4, description);
-	pstmt.setString(5, category);
-	pstmt.setString(6, manufacturer);
-	pstmt.setLong(7, stock);
-	pstmt.setString(8, condition);
-	pstmt.setString(9, fileName);
+	pstmt.setString(1, c_id);
+	pstmt.setString(2, c_name);
+	pstmt.setInt(3, c_price);
+	pstmt.setString(4, c_description);
+	pstmt.setString(5, c_category);
+	pstmt.setString(6, c_manufacturer);
+	pstmt.setInt(7, c_unitsinstock);
+	pstmt.setString(8, c_filename);
 	pstmt.executeUpdate();
 	
 	if (pstmt != null)
 		pstmt.close();
 	if (conn != null)
 		conn.close();
-	
+
 	response.sendRedirect("products.jsp");
-	
 %>
-	

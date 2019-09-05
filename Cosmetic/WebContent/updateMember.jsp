@@ -3,16 +3,16 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <html>
 <head>
-<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
 %>
 <sql:setDataSource var="dataSource"
-	url="jdbc:mysql://localhost:3306/WebMarketDB"
-	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
+	url="jdbc:oracle:thin:@localhost:1521:xe"
+	driver="oracle.jdbc.driver.OracleDriver" user="madang" password="madang" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
-   SELECT * FROM MEMBER WHERE ID=?
+   SELECT * FROM CMEMBER WHERE M_ID=?
    <sql:param value="<%=sessionId%>" />
 </sql:query>	
 <title>회원 수정</title>
