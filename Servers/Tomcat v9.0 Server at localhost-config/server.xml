@@ -149,18 +149,18 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Cosmetic" path="/Cosmetic" reloadable="true" source="org.eclipse.jst.jee.server:Cosmetic"/>
+      <!-- <Context docBase="Cosmetic" path="/Cosmetic" reloadable="true" source="org.eclipse.jst.jee.server:Cosmetic"/>
       <Context docBase="WebMarket" path="/WebMarket" reloadable="true" source="org.eclipse.jst.jee.server:WebMarket"/>
-      <Context docBase="shoppingmall" path="/shoppingmall" reloadable="true" source="org.eclipse.jst.jee.server:shoppingmall">
-      	<Resource name = "jdbc/jsptest" 
+      <Context docBase="shoppingmall" path="/shoppingmall" reloadable="true" source="org.eclipse.jst.jee.server:shoppingmall" />  -->
+      <Context docBase="simpleMVC" path="/simpleMVC" reloadable="true" source="org.eclipse.jst.jee.server:simpleMVC"/>
+      	<!--<Resource name = "jdbc/jsptest" 
       		auth="Container"
       		type ="javax.sql.DataSource"
       		driveClassName = "com.mysql.jdbc.Driver"
       		username = "root"
       		password = "1234"
-      		url = "jdbc:mysql://localhost:3306/jsptest"
-      		maxWait = "5000" />
-      </Context>
+      		url = "jdbc:mysql://localhost:3306/jsptest?serverTimezone=UTC"
+      		maxWait = "5000" />-->
       </Host>
     </Engine>
   </Service>
