@@ -9,7 +9,7 @@
     <img class="noborder" id="logo" src="/shoppingmall/images/mollalogo3.png"/>
   </div>
   <div id="auth" class="box">
-    <c:if test="${type == 0}">
+    <c:if test="${type == 0}">  
       <jsp:include page="mngr/logon/mLoginForm.jsp"/>
     </c:if>
     <c:if test="${type == 1}">

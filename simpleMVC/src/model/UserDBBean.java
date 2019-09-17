@@ -56,7 +56,7 @@ public class UserDBBean {
 			//3. ResultSet 받기
 				//넘겨진 쿼리를 rs에다가 받음
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery(); //데이터의 모든 결과가 rs안에 들어옴.
 			
 			//4. Result 결과물 출력해보기 -> rs.getString()
 			while(rs.next()) {

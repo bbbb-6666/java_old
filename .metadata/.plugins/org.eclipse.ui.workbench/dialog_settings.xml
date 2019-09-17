@@ -22,7 +22,7 @@
 		<item key="uncategorizedFilter" value="true"/>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
 			<item value="org.eclipse.jdt.ui.java"/>
@@ -33,9 +33,16 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.jst.servlet.ui.internal.wizard.WebComponentImportWizard"/>
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.jst.servlet.ui.internal.wizard.WebComponentExportWizard"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.jst.ws.consumption.ui.wsimport.category"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.jst.ws.creation.ui.wsexport.category"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">
@@ -46,5 +53,7 @@
 			<item value="C:\Users\USER\Desktop\으노기2.3 교재소스 모음\src"/>
 			<item value="E:\4. homework\jsp\cosmetic"/>
 		</list>
+	</section>
+	<section name="ZipFileImportWizard">
 	</section>
 </section>

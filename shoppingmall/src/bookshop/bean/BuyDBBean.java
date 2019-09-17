@@ -128,6 +128,11 @@ public class BuyDBBean {
                 pstmt.setString(12, deliveryAddress);
                 pstmt.executeUpdate();
                 
+                //이 부분을 죽였다 살렸다 해보면서 디버깅을 해보기 
+//                int num = pstmt.executeUpdate();
+//                if(num==0) System.out.println("처리실패");
+//                else System.out.println("처리성공");
+                
                 //상품이 구매되었으므로 book테이블의 상품수량을 재조정함
                 pstmt = conn.prepareStatement(
                 		"select book_count from book where book_id=?");
@@ -144,6 +149,10 @@ public class BuyDBBean {
     			pstmt.setInt(2, cart.getBook_id());
                 
                 pstmt.executeUpdate(); 
+                //이 부분을 죽였다 살렸다 해보면서 디버깅을 해보기 
+//              int num = pstmt.executeUpdate();
+//              if(num==0) System.out.println("처리실패");
+//              else System.out.println("처리성공");
             }
             
             pstmt = conn.prepareStatement(
